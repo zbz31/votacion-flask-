@@ -4,6 +4,9 @@ from datetime import datetime
 
 app = Flask(__name__)
 
+# 🔧 Crear la carpeta /data si no existe
+os.makedirs("/data", exist_ok=True)
+
 DB_FILE = "/data/votes.json"
 
 if not os.path.exists(DB_FILE):
