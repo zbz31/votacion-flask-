@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: votacion-flask
+    env: python
+    buildCommand: ""
+    startCommand: gunicorn main:app --bind 0.0.0.0:10000
+    plan: free
+    autoDeploy: true
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11
+    disk:
+      name: votos-disco
+      mountPath: /data
+      sizeGB: 1
